@@ -1,6 +1,27 @@
 console.log("Up and running!");
 //This tells you which cards are in the deck
-var cards = ["queen", "queen", "king", "king"];
+var cards = [
+{
+rank: "queen",
+suit: "hearts",
+cardImage: "images/queen-of-hearts.png"	
+},
+{
+rank: "queen",
+suit: "diamonds",
+cardImage: "images/queen-of-diamonds.png"	
+},
+{
+rank: "king",
+suit: "hearts",
+cardImage: "images/king-of-hearts.png"	
+},
+{
+rank: "king",
+suit: "diamonds",
+cardImage: "images/king-of-diamonds.png"	
+},
+];
 /*I am not sure what this command does, I think it tells 
 you what cards the user has clicked on*/
 var cardsInPlay = [];
@@ -28,9 +49,16 @@ var flipCard = function(cardID){
 	cardsInPlay list*/
 	//console.log("User flipped " + cardOne); this is 
 	//being changed to the following:
-	checkForMatch();
-	console.log("User flipped " + cards[cardID]);
-	cardsInPlay.push(cards[cardID]);
+	/*console.log("User flipped " + cards[cardID.rank]);
+	I'm going to see if changing this will fix it, is currently 
+	flipping undefined*/
+	console.log("User flipped " + cards[cardID].rank)
+	/*that fixed it but, did it change the code? Do
+	I have to change that for the push line as well?*/
+	console.log(cards[cardID].cardImage);
+	console.log(cards[cardID].suit);
+	//cardsInPlay.push(cards[cardID.rank]);
+	cardsInPlay.push(cards[cardID].rank);
 	//var cardTwo = cards[2];
 	/*I do not follow this logic
 	Why are we checking for the 1st and 3rd cards?
@@ -48,6 +76,7 @@ var flipCard = function(cardID){
 			alert("Sorry, try again.");
 	 	};*/
 	//the above if statement is now a function to check 	
+	checkForMatch();
 	};
 flipCard(0);
 flipCard(2);	
