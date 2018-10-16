@@ -20,7 +20,7 @@ cardImage: "images/king-of-hearts.png"
 rank: "king",
 suit: "diamonds",
 cardImage: "images/king-of-diamonds.png"	
-},
+}
 ];
 /*I am not sure what this command does, I think it tells 
 you what cards the user has clicked on*/
@@ -40,6 +40,14 @@ var checkForMatch = function(){
 that happen when the user flips a card*/
 //I put all the info for pushing the cards into the lists
 //into the function, leaving the lists themselves out
+//this function creates a new game board
+var createBoard = function(){
+for (var i=0; i<cards.length;i++){
+	var cardElement = document.createElement('img');
+	cardElement.setAttribute('src','images/back.png');
+	cardElement.setAttribute('data-id','i');
+}	
+};
 var flipCard = function(cardID){
 	//var cardOne = cards[0];
 	/*Now the new variable cardOne is the first element
